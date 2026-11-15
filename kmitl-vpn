@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# KMITL L2TP/IPsec VPN helper for NetworkManager.
+set -euo pipefail
+
+script_path=$(readlink -f "${BASH_SOURCE[0]}")
+script_dir=$(dirname "$script_path")
+
+source "$script_dir/lib/log.sh"
+source "$script_dir/lib/common.sh"
+source "$script_dir/lib/packages.sh"
+source "$script_dir/lib/libreswan.sh"
+source "$script_dir/lib/profile.sh"
+source "$script_dir/lib/routes.sh"
+source "$script_dir/lib/commands.sh"
+
+main "$@"
