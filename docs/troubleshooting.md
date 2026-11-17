@@ -12,6 +12,8 @@
 | `Invalid network: ...` | Bad network format in `routes` | Use a form like `161.246.166.0/24`. |
 | `Could not find the latest libreswan release` | GitHub cannot be reached | Check your internet connection and try again. |
 | `libreswan signature check failed` | The download is corrupted or changed | Run setup again. Do not skip the check. |
+| `Connection activation failed: Unknown reason`, and `pluto` logs `netlink response for XFRM_MSG_UPDSA ... Protocol not supported (errno 93)` | The kernel was updated but not rebooted, so the IPsec (`esp4`) kernel module for the running kernel is missing | Reboot, then run `./kmitl-vpn connect` again. Check with `uname -r` and `ls /lib/modules`: the two versions must match. |
+| `xmllint ... failed to load "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"` during the build | The DocBook XML files are missing, so `xmlto` cannot build the man pages | Install the DocBook packages (`docbook-xml` and `docbook-xsl` on Arch), then run setup again. Setup installs them from now on. |
 
 ## Read the logs
 

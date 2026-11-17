@@ -35,7 +35,7 @@ Run `setup` once. It installs the software and creates the VPN profile.
 - **NetworkManager** and its **L2TP plugin**. L2TP is the tunnel protocol the VPN uses.
 - **xl2tpd**. An L2TP daemon, the program that runs the tunnel.
 - **ppp** (pacman only). The point-to-point protocol tools.
-- **Build tools and libraries**. These are needed to compile libreswan.
+- **Build tools and libraries**. These are needed to compile libreswan. This includes `xmlto` and the DocBook XML and XSL files it uses to build the man pages.
 - **libreswan**. The IPsec program, built from source. IPsec encrypts the tunnel.
 
 Setup also removes **strongSwan** and **openswan** if they are installed. They conflict with libreswan.

@@ -75,19 +75,19 @@ install_build_deps() {
     pacman)
       run_root pacman -S --needed --noconfirm \
         base-devel bison flex pkgconf nss nspr libcap-ng libevent pam \
-        curl audit libxcrypt systemd-libs xmlto gnupg ;;
+        curl audit libxcrypt systemd-libs xmlto docbook-xml docbook-xsl gnupg ;;
     apt)
       run_root apt-get update
       run_root apt-get install -y \
         build-essential bison flex pkg-config libaudit-dev libcap-ng-dev \
         libcurl4-gnutls-dev libevent-dev libnspr4-dev libnss3-dev libnss3-tools \
-        libpam0g-dev libselinux1-dev libldap2-dev xmlto gnupg curl ;;
+        libpam0g-dev libselinux1-dev libldap2-dev xmlto docbook-xml docbook-xsl gnupg curl ;;
     dnf)
       run_root dnf install -y \
         gcc make bison flex pkgconfig audit-libs-devel curl-devel \
         libcap-ng-devel libevent-devel nspr-devel nss-devel nss-tools \
         openldap-devel pam-devel libselinux-devel hostname xmlto \
-        systemd-rpm-macros gnupg2 curl ;;
+        docbook-style-xsl docbook-dtds systemd-rpm-macros gnupg2 curl ;;
     zypper)
       run_root zypper --non-interactive install \
         gcc make bison flex pkgconf gpg2 curl ;;
